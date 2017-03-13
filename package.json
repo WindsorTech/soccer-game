@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nickpopadopolous/Project-Two.git"
+    "url": "git+https://github.com/windsor80/soccer-game.git"
   },
   "author": "Windsor Edeling",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nickpopadopolous/Project-Two/issues"
+    "url": "https://github.com/windsor80/soccer-game/issues"
   },
-  "homepage": "https://github.com/Nickpopadopolous/Project-Two#readme",
+  "homepage": "https://github.com/windsor80/soccer-game#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",

@@ -109,6 +109,8 @@ function create() {
     //player.animations.add('left', 0, true);
     //player.animations.add('right', 0 ,true);
 
+//======================ENEMY PLAYERS===========================//
+
     //enemy
     enemy = game.add.sprite(1100, game.world.height - 385, 'enemy');
     enemy.scale.setTo(0.6, 0.6);
@@ -195,6 +197,8 @@ function create() {
 
     //var tween = game.add.tween(enemy4).to( { x: 300 }, 20000, Phaser.Easing.Linear.None, true, 0, 1000, true);
 
+//======================ENEMY PLAYERS END===========================//
+
 
     //===========ICE CREAMS================//
     cones = game.add.group();
@@ -261,12 +265,16 @@ function create() {
 
     goal.body.collideWorldBounds = true;
 
+    goal.body.immovable = true;
+
 
     goal2 = game.add.sprite(1255, 252, 'goal-two');
 
     game.physics.enable([goal2], Phaser.Physics.ARCADE);
 
     goal2.body.collideWorldBounds = true;
+
+    goal2.body.immovable = true;
     //======================================//
 
 
@@ -338,6 +346,8 @@ function update() {
 
     //  Set collision between game sprites
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(player, goal);
+    game.physics.arcade.collide(player, goal2);
 //=================================================//
     game.physics.arcade.collide(enemy, platforms);
     game.physics.arcade.collide(enemy, player);
