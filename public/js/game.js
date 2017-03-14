@@ -28,17 +28,8 @@ var platforms;
 var cursors;
 var ground;
 var enemy;
-var enemy1;
-var enemy2;
-var enemy3;
-var enemy4;
-var enemy5;
-var enemy6;
-var enemy7;
-var enemy8;
-var enemy9;
-var enemy10;
-var enemy11;
+
+
 
 var score = 0;
 var scoreText;
@@ -59,207 +50,199 @@ function create() {
     // Enable the Arcade Physics system to the Game
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    //game.world.setBounds(0, 0, 3400, 1000);
-
-    //  A simple background for our game
+    // Soccer Field Background
     game.add.sprite(0, 0, 'futebol');
-
-    //Create Trees for background
-    //trees = game.add.sprite(0, 150, 'trees');
-
-    // //  The platforms group contains the ground and the 2 ledges we can jump on
-    // platforms = game.add.group();
-
-    // //  We will enable physics for any object that is created in this group
-    // platforms.enableBody = true;
-
-    // // Here we create the ground.
-    // var ground = platforms.create(0, game.world.height - 25, 'ground');
-
-    // //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-    // ground.scale.setTo(4, 4);
-
-    // //  This stops it from falling away when you jump on it
-    // ground.body.immovable = true;
-
-    //  Now let's create two ledges
-    // var ledge = platforms.create(400, 400, 'ground');
-    // ledge.body.immovable = true;
-
-    // ledge = platforms.create(30, 250, 'ground');
-    // ledge.body.immovable = true;
-
-    // ledge = platforms.create(800, 200, 'ground');
-    // ledge.body.immovable = true;
-
-    // The player and its settings
-    //player = game.add.sprite(32, game.world.height - 150, 'dude');
-
-    //player.scale.setTo(.6, .6);
-
-    //  We need to enable physics on the player
-    //game.physics.arcade.enable(player);
-
-    //  Player physics properties. Give the little guy a slight bounce.
-    //player.body.bounce.y = 0.2;
-    //player.body.gravity.y = 300;
-    //player.body.collideWorldBounds = true;
-
-    //  Our two animations, walking left and right.
-    //player.animations.add('left', 0, true);
-    //player.animations.add('right', 0 ,true);
-
+   
 //======================ENEMY PLAYERS===========================//
 
     //enemy
-    enemy = game.add.sprite(1100, game.world.height - 385, 'enemy');
+    enemy = game.add.sprite(1150, game.world.height - 410, 'enemy');
     enemy.scale.setTo(0.6, 0.6);
     game.physics.arcade.enable(enemy);
     enemy.body.immovable = true;
     enemy.body.collideWorldBounds = true;
+    enemy.body.velocity.y = 70;
+    enemy.body.bounce.y = 1;
+    game.add.tween(enemy).to({ y: 315 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
     //enemy1
-    enemy1 = game.add.sprite(950, game.world.height - 550, 'enemy');
+    enemy1 = game.add.sprite(980, game.world.height - 580, 'enemy');
     enemy1.scale.setTo(0.6, 0.6);
     game.physics.arcade.enable(enemy1);
     enemy1.body.immovable = true;
     enemy1.body.collideWorldBounds = true;
+    enemy1.body.velocity.y = 70;
+    enemy1.body.bounce.y = 1;
+    game.add.tween(enemy1).to({ y: 60 }, 3500, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
     //enemy2
-    enemy2 = game.add.sprite(950, game.world.height - 175, 'enemy');
+    enemy2 = game.add.sprite(980, game.world.height - 100, 'enemy');
     enemy2.scale.setTo(0.6, 0.6);
     game.physics.arcade.enable(enemy2);
     enemy2.body.immovable = true;
     enemy2.body.collideWorldBounds = true;
+    enemy2.body.velocity.y = 70;
+    enemy2.body.bounce.y = 1;
+    game.add.tween(enemy2).to({ y: 425 }, 3250, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
     //enemy3
-    enemy3 = game.add.sprite(850, game.world.height - 400, 'enemy');
+    enemy3 = game.add.sprite(980, game.world.height - 475, 'enemy');
     enemy3.scale.setTo(0.6, 0.6);
     game.physics.arcade.enable(enemy3);
     enemy3.body.immovable = true;
     enemy3.body.collideWorldBounds = true;
+    enemy3.body.velocity.y = 70;
+    enemy3.body.bounce.y = 1;
+    game.add.tween(enemy3).to({ y: 200 }, 3500, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
     //enemy4
-    enemy4 = game.add.sprite(700, game.world.height - 500, 'enemy');
+    enemy4 = game.add.sprite(980, game.world.height - 315, 'enemy');
     enemy4.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy4);
     enemy4.body.immovable = true;
     enemy4.body.collideWorldBounds = true;
+    enemy4.body.velocity.y = 70;
+    enemy4.body.bounce.y = 1;
+    game.add.tween(enemy4).to({ y: 320 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
     //enemy5
-    enemy5 = game.add.sprite(700, game.world.height - 200, 'enemy');
+    enemy5 = game.add.sprite(820, game.world.height - 150, 'enemy');
     enemy5.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy5);
     enemy5.body.immovable = true;
     enemy5.body.collideWorldBounds = true;
+    enemy5.body.velocity.y = 70;
+    enemy5.body.bounce.y = 1;
+    game.add.tween(enemy5).to({ y: 300 }, 3500, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy6
-    enemy6 = game.add.sprite(140, game.world.height - 385, 'enemy-white');
+    enemy6 = game.add.sprite(770, game.world.height - 415, 'enemy');
     enemy6.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy6);
     enemy6.body.immovable = true;
     enemy6.body.collideWorldBounds = true;
+    game.add.tween(enemy6).to({ y: 330 }, 3300, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy7
-    enemy7 = game.add.sprite(290, game.world.height - 550, 'enemy-white');
+    enemy7 = game.add.sprite(820, game.world.height - 575, 'enemy');
     enemy7.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy7);
     enemy7.body.immovable = true;
     enemy7.body.collideWorldBounds = true;
+    game.add.tween(enemy7).to({ y: 230 }, 3650, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy8
-    enemy8 = game.add.sprite(290, game.world.height - 175, 'enemy-white');
+    enemy8 = game.add.sprite(700, game.world.height - 100, 'enemy');
     enemy8.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy8);
     enemy8.body.immovable = true;
     enemy8.body.collideWorldBounds = true;
+    game.add.tween(enemy8).to({ y: 340 }, 4000, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy9
-    enemy9 = game.add.sprite(400, game.world.height - 400, 'enemy-white');
+    enemy9 = game.add.sprite(700, game.world.height - 575, 'enemy');
     enemy9.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy9);
     enemy9.body.immovable = true;
     enemy9.body.collideWorldBounds = true;
+    game.add.tween(enemy9).to({ y: 230 }, 3850, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+//-----------------------The other team----------------------//
 
     //enemy10
-    enemy10 = game.add.sprite(550, game.world.height - 500, 'enemy-white');
+    enemy10 = game.add.sprite(100, game.world.height - 410, 'enemy-white');
     enemy10.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy10);
     enemy10.body.immovable = true;
     enemy10.body.collideWorldBounds = true;
+    game.add.tween(enemy10).to({ y: 320 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy11
-    enemy11 = game.add.sprite(550, game.world.height - 200, 'enemy-white');
+    enemy11 = game.add.sprite(270, game.world.height - 580, 'enemy-white');
     enemy11.scale.setTo(0.6, 0.6)
     game.physics.arcade.enable(enemy11);
     enemy11.body.immovable = true;
     enemy11.body.collideWorldBounds = true;
+    game.add.tween(enemy11).to({ y: 80 }, 3450, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
-    //var tween = game.add.tween(enemy4).to( { x: 300 }, 20000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+    //enemy12
+    enemy12 = game.add.sprite(270, game.world.height - 100, 'enemy-white');
+    enemy12.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy12);
+    enemy12.body.immovable = true;
+    enemy12.body.collideWorldBounds = true;
+    game.add.tween(enemy12).to({ y: 430 }, 3700, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy13
+    enemy13 = game.add.sprite(270, game.world.height - 465, 'enemy-white');
+    enemy13.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy13);
+    enemy13.body.immovable = true;
+    enemy13.body.collideWorldBounds = true;
+    game.add.tween(enemy13).to({ y: 225 }, 3100, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy14
+    enemy14 = game.add.sprite(270, game.world.height - 315, 'enemy-white');
+    enemy14.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy14);
+    enemy14.body.immovable = true;
+    enemy14.body.collideWorldBounds = true;
+    game.add.tween(enemy14).to({ y: 360 }, 3500, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy15
+    enemy15 = game.add.sprite(440, game.world.height - 280, 'enemy-white');
+    enemy15.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy15);
+    enemy15.body.immovable = true;
+    enemy15.body.collideWorldBounds = true;
+    game.add.tween(enemy15).to({ y: 500 }, 3200, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+    
+
+    //enemy16
+    enemy16 = game.add.sprite(485, game.world.height - 400, 'enemy-white');
+    enemy16.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy16);
+    enemy16.body.immovable = true;
+    enemy16.body.collideWorldBounds = true;
+    game.add.tween(enemy16).to({ y: 350 }, 3700, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy17
+    enemy17 = game.add.sprite(440, game.world.height - 580, 'enemy-white');
+    enemy17.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy17);
+    enemy17.body.immovable = true;
+    enemy17.body.collideWorldBounds = true;
+    game.add.tween(enemy17).to({ y: 260 }, 3450, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy18
+    enemy18 = game.add.sprite(540, game.world.height - 100, 'enemy-white');
+    enemy18.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy18);
+    enemy18.body.immovable = true;
+    enemy18.body.collideWorldBounds = true;
+    game.add.tween(enemy18).to({ y: 320 }, 3700, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
+
+    //enemy19
+    enemy19 = game.add.sprite(540, game.world.height - 575, 'enemy-white');
+    enemy19.scale.setTo(0.6, 0.6)
+    game.physics.arcade.enable(enemy19);
+    enemy19.body.immovable = true;
+    enemy19.body.collideWorldBounds = true;
+    game.add.tween(enemy19).to({ y: 230 }, 3250, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
 //======================ENEMY PLAYERS END===========================//
 
-
-    //===========ICE CREAMS================//
-    cones = game.add.group();
-
-    cones.enableBody = true;
-
-    cones.physicsBodyType = Phaser.Physics.ARCADE;
-
-    // for (var i = 0; i < 1; i++)
-    // {
-    //     var coneX = (window.innerWidth / 20) * i
-    //     var cone = cones.create(coneX, i * Math.floor(Math.random() * 70), 'cone');
-
-    //     cone.body.gravity.y = 0;
-
-
-    //     cone.body.bounce.setTo(0.9, 0.9);
-
-    //     cone.body.collideWorldBounds=true;
-    //     cone.body.gravity.x = game.rnd.integerInRange(-80, 80);
-    //     cone.body.gravity.y = 0 + Math.random() * 100;
-    // }
-
-    //===========ICE CREAMS END================//
-
-    //===========BROCCOLI================//
-    broccolis = game.add.group();
-
-    broccolis.enableBody = true;
-
-    broccolis.physicsBodyType = Phaser.Physics.ARCADE;
-
-    // for (var i = 0; i < 8; i++)
-    // {
-    //     // Randomize Broccoli position
-    //     var brocX = (window.innerWidth / 8) * i
-    //     var broc = broccolis.create(brocX, i * Math.floor(Math.random() * 70), 'broccoli');
-
-    //     broc.body.gravity.y = 0;
-
-
-    //     broc.body.bounce.setTo(0.9, 0.9);
-
-    //     broc.body.collideWorldBounds=true;
-    //     broc.body.gravity.x = game.rnd.integerInRange(-80, 80);
-    //     broc.body.gravity.y = 0 + Math.random() * 100;
-    // }
-
-    //===========BROCCOLI END================//
-
-    //  The score
-    //scoreText = game.add.text(25, 25, 'Score: 0', { fontSize: '32px', fill: '#000' });
+    //  GAME SCORE
+    scoreText = game.add.text(600, 25, 'Goals: 0', { fontSize: '24px', fill: '#FFF' });
 
     //  Our controls.
-    cursors = game.input.keyboard.createCursorKeys();
+    //cursors = game.input.keyboard.createCursorKeys();
 
     // TIMER
     //game.time.events.add(Phaser.Timer.SECOND * 20, gameEnd);
 
     //==========GOALS=============//
-    goal = game.add.sprite(1, 252, 'goal');
+    goal = game.add.sprite(0, 252, 'goal');
 
     game.physics.enable([goal], Phaser.Physics.ARCADE);
 
@@ -346,8 +329,11 @@ function update() {
 
     //  Set collision between game sprites
     game.physics.arcade.collide(player, platforms);
-    game.physics.arcade.collide(player, goal);
-    game.physics.arcade.collide(player, goal2);
+    //game.physics.arcade.collide(player, goal);
+    //game.physics.arcade.collide(player, goal2);
+    game.physics.arcade.overlap(player, goal, ownGoal, null, this);game.physics.arcade.overlap(player, goal, goalScore, null, this);
+    game.physics.arcade.overlap(player, goal2, goalScore, null, this);
+
 //=================================================//
     game.physics.arcade.collide(enemy, platforms);
     game.physics.arcade.collide(enemy, player);
@@ -384,10 +370,34 @@ function update() {
 //=================================================//
     game.physics.arcade.collide(enemy11, platforms);
     game.physics.arcade.collide(enemy11, player);
+//=================================================//
+    game.physics.arcade.collide(enemy12, platforms);
+    game.physics.arcade.collide(enemy12, player);
+//=================================================//
+    game.physics.arcade.collide(enemy13, platforms);
+    game.physics.arcade.collide(enemy13, player);
+//=================================================//
+    game.physics.arcade.collide(enemy14, platforms);
+    game.physics.arcade.collide(enemy14, player);
+//=================================================//
+    game.physics.arcade.collide(enemy15, platforms);
+    game.physics.arcade.collide(enemy15, player);
+//=================================================//
+    game.physics.arcade.collide(enemy16, platforms);
+    game.physics.arcade.collide(enemy16, player);
+//=================================================//
+    game.physics.arcade.collide(enemy17, platforms);
+    game.physics.arcade.collide(enemy17, player);
+//=================================================//
+    game.physics.arcade.collide(enemy18, platforms);
+    game.physics.arcade.collide(enemy18, player);
+//=================================================//
+    game.physics.arcade.collide(enemy19, platforms);
+    game.physics.arcade.collide(enemy19, player);
 
-    game.physics.arcade.overlap(player, cones, collectCone, null, this);
+    //game.physics.arcade.overlap(player, cones, collectCone, null, this);
 
-    game.physics.arcade.overlap(player, broccolis, collectBroccoli, null, this);
+    //game.physics.arcade.overlap(player, broccolis, collectBroccoli, null, this);
 
 
     ///======================BALL EFECT==============//
@@ -409,39 +419,51 @@ function update() {
 
     //=====================BALL EFFECT END=======//
 
-
 }
 
-// function render() {
+function goalScore (player, goal2) {
 
-//     game.debug.text("Drag the sprite and release to launch", 32, 32, 'rgb(0,255,0)');
-//     game.debug.cameraInfo(game.camera, 32, 64);
-//     game.debug.spriteCoords(player, 32, 150);
-//     game.debug.text("Launch Velocity: " + parseInt(launchVelocity), 550, 32, 'rgb(0,255,0)');
-
-// }
-
-
-function collectCone (player, cone) {
-
-    // Removes the star from the screen
-    cone.kill();
+    // Removes the ball from the screen
+    player.kill();
 
     //  Add and update the score
-    score += 10;
-    scoreText.text = 'Score: ' + score;
+    score += 1;
+    scoreText.text = 'Goals: ' + score;
+
+    restartBall();
 
 }
 
 
-function collectBroccoli (player, broc) {
+function ownGoal (player, goal) {
 
-    // Removes the broccoli from the screen
-    broc.kill();
+    // Removes the ball from the screen
+    player.kill();
 
     //  Add and update the score
-    score -= 10;
-    scoreText.text = 'Score: ' + score;
+    score -= 1;
+    scoreText.text = 'Goals: ' + score;
+
+    restartBall();
+
+}
+
+function restartBall () {
+
+    player = game.add.sprite(640, 300, 'player');
+
+    game.physics.enable([player], Phaser.Physics.ARCADE);
+
+    player.anchor.set(0.5);
+    player.body.collideWorldBounds = true;
+    player.body.bounce.set(0.9);
+    player.body.drag.set(50, 50);
+
+    // Enable input.
+    player.inputEnabled = true;
+    player.input.start(0, true);
+    player.events.onInputDown.add(set);
+    player.events.onInputUp.add(launch);
 
 }
 
