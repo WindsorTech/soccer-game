@@ -3,8 +3,6 @@ var express = require('express');
 
 var router = express.Router();
 
-
-
 // routes for express
 
 router.get('/', function(req, res){
@@ -19,13 +17,10 @@ router.get('/', function(req, res){
 
 router.post('/create', function (req, res) {
 
-
-
 });
 
 
 router.put('/update', function (req, res) {
-
 
  });
 

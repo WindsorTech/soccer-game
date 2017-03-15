@@ -1,8 +1,6 @@
 var game = new Phaser.Game(1277, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
-
-
     //Load GameImages
     game.load.image('futebol', '../images/football-field.jpg');
     game.load.image('enemy', '../images/footballer-yellow.png');
@@ -12,9 +10,6 @@ function preload() {
     game.load.image('player','../images/bola.png');
     game.load.image('analog', '../images/arrow.png');
     game.load.image('arrow', '../images/arrow.png');
-
-
-
 }
 
 //Global Variables
@@ -25,26 +20,13 @@ var goal2;
 var catchFlag = false;
 var launchVelocity = 0;
 var platforms;
-var cursors;
-var ground;
 var enemy;
 
-
-
 var score = 0;
+var text = 0;
 var scoreText;
 var endText;
-
-var textStyle = { font: '64px Desyrel', align: 'center'};
-
-var timer;
-// var timerText;
-// var milliseconds = 0;
-// var seconds = 0;
-// var minutes = 0;
-
-var counter = 10;
-var text = 0;
+var counter = 5;
 
 function create() {
 
@@ -198,7 +180,6 @@ function create() {
     enemy15.body.collideWorldBounds = true;
     game.add.tween(enemy15).to({ y: 500 }, 3200, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
     
-
     //enemy16
     enemy16 = game.add.sprite(485, game.world.height - 400, 'enemy-white');
     enemy16.scale.setTo(0.6, 0.6)
@@ -234,17 +215,10 @@ function create() {
     //  GAME SCORE
     scoreText = game.add.text(597, 25, 'Goals: 0', { fontSize: '24px', fill: '#FFF' });
 
-    //  Our controls.
-    //cursors = game.input.keyboard.createCursorKeys();
-
     // TIMER
-    //game.time.events.add(Phaser.Timer.SECOND * 10, gameEnd);
-
-
-    // NEW TIMER
     game.time.events.loop(Phaser.Timer.SECOND, updateCounter, this);
 
-    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 10', { font: "22px Arial", fill: "#ffffff", align: "center" });
+    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 45', { font: "22px Arial", fill: "#ffffff", align: "center" });
     text.anchor.setTo(0.5, -8.5);
 
     // GOALS
@@ -255,8 +229,7 @@ function create() {
     goal.body.collideWorldBounds = true;
 
     goal.body.immovable = true;
-
-
+    //------------------------------------------------//
     goal2 = game.add.sprite(1255, 252, 'goal-two');
 
     game.physics.enable([goal2], Phaser.Physics.ARCADE);
@@ -286,7 +259,7 @@ function create() {
     player.body.bounce.set(0.9);
     player.body.drag.set(50, 50);
 
-    // Enable input.
+    // Enable input
     player.inputEnabled = true;
     player.input.start(0, true);
     player.events.onInputDown.add(set);
@@ -310,7 +283,6 @@ function launch() {
 
     catchFlag = false;
     player.body.moves = true;
-    game.camera.follow(player, Phaser.Camera.FOLLOW_TOPDOWN);
     
     arrow.alpha = 0;
     analog.alpha = 0;
@@ -324,18 +296,12 @@ function launch() {
 
 function update() {
 
-    //game.add.text(550, 50, 'Time Left: ' + game.time.events.duration);
-
-    // TIMER UPDATE TEXT
-    //game.debug.text("Time left: " + game.time.events.duration, 555, 580);
-
     //  Set collision between game sprites
     game.physics.arcade.collide(player, platforms);
     
     // Overlap function to compute goals
     game.physics.arcade.overlap(player, goal, ownGoal, null, this);game.physics.arcade.overlap(player, goal, goalScore, null, this);
     game.physics.arcade.overlap(player, goal2, goalScore, null, this);
-
 //=================================================//
     game.physics.arcade.collide(enemy, platforms);
     game.physics.arcade.collide(enemy, player);
@@ -425,7 +391,6 @@ function updateCounter() {
     if (counter === 0) {
         gameEnd();
     }
-
 }
 
 function goalScore (player, goal2) {
@@ -433,26 +398,23 @@ function goalScore (player, goal2) {
     // Removes the ball from the screen
     player.kill();
 
-    //  Add and update the score
+    // Update the score
     score += 1;
     scoreText.text = 'Goals: ' + score;
 
     restartBall();
-
 }
-
 
 function ownGoal (player, goal) {
 
     // Removes the ball from the screen
     player.kill();
 
-    //  Add and update the score
+    // Update the score
     score -= 1;
     scoreText.text = 'Goals: ' + score;
 
     restartBall();
-
 }
 
 function restartBall () {
@@ -467,12 +429,10 @@ function restartBall () {
     player.body.bounce.set(0.9);
     player.body.drag.set(50, 50);
 
-    
     player.inputEnabled = true;
     player.input.start(0, true);
     player.events.onInputDown.add(set);
     player.events.onInputUp.add(launch);
-
 }
 
 function gameEnd() {
@@ -483,5 +443,4 @@ function gameEnd() {
     enemy.animations.stop(null, true);
 
     text.kill();
-
 }
