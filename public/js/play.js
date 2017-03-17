@@ -206,7 +206,7 @@ create: function() {
     enemy9.body.collideWorldBounds = true;
     game.add.tween(enemy9).to({ y: 40 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
-//-----------------------The other team----------------------//
+//-----------------------RedTeam----------------------//
 
     //enemy10
     enemy10 = game.add.sprite(100, game.world.height - 410, 'enemy-white');
