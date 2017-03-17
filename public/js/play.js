@@ -120,7 +120,7 @@ create: function() {
 
     music = game.add.audio('musica');
 
-    music.play();
+    //music.play();
    
 //======================PLAYERS===========================//
 
