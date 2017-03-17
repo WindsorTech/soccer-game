@@ -1,8 +1,17 @@
 {
-  "name": "soccer-game",
+  "name": "digiball-soccer",
   "version": "1.0.0",
-  "description": "game",
+  "description": "An interactive and fun soccer game for all ages!",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "body-parser": "^1.16.1",
+    "handlebars": "^4.0.6",
+    "method-override": "^2.3.7",
+    "sequelize": "^3.30.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,24 +20,15 @@
     "type": "git",
     "url": "git+https://github.com/windsor80/soccer-game.git"
   },
+  "keywords": [
+    "soccer",
+    "football",
+    "game"
+  ],
   "author": "Windsor Edeling",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/windsor80/soccer-game/issues"
   },
-  "homepage": "https://github.com/windsor80/soccer-game#readme",
-  "dependencies": {
-    "body-parser": "^1.16.1",
-    "express": "^4.14.1",
-    "express-handlebars": "^3.0.0",
-    "handlebars": "^4.0.6",
-    "method-override": "^2.3.7",
-    "sequelize": "^3.30.2"
-  },
-  "devDependencies": {},
-  "keywords": [
-    "soccer",
-    "game",
-    "football"
-  ]
+  "homepage": "https://github.com/windsor80/soccer-game#readme"
 }

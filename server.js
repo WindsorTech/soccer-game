@@ -26,8 +26,8 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-// method override
 
+// method override
 app.use(methodOverride("_method"));
 
 app.use('/', routes);
