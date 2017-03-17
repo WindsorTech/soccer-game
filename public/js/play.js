@@ -120,7 +120,7 @@ create: function() {
 
     music = game.add.audio('musica');
 
-    //music.play();
+    music.play();
    
 //======================PLAYERS===========================//
 
@@ -294,7 +294,7 @@ create: function() {
     // TIMER
     game.time.events.loop(Phaser.Timer.SECOND, updateCounter, this);
 
-    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 45', { font: "22px Arial", fill: "#ffffff", align: "center" });
+    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 60', { font: "22px Arial", fill: "#ffffff", align: "center" });
     text.anchor.setTo(0.5, -8.5);
 
     // GOALS
