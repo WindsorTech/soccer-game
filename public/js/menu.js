@@ -10,7 +10,7 @@ var menuState = {
 
 		game.add.sprite(0, 0, 'stadium');
 
-		var nameLabel = game.add.text(80, 80, 'Digiball Soccer', {font: '50px Arial', fill: '#ffffff', align: "center"});
+		//var nameLabel = game.add.text(80, 80, 'Digiball Soccer', {font: '50px Arial', fill: '#ffffff', align: "center"});
 
 		//var startLabel = game.add.text(80, game.world.height-80, 'Press the W key to start', {font: '25px Arial', fill: '#ffffff'});
 
@@ -18,7 +18,7 @@ var menuState = {
 
 		//wkey.onDown.addOnce(this.start, this);
 
-		var button = game.add.button(game.world.centerX - 50, 410, 'button', start, this, 2, 1, 0);
+		var button = game.add.button(game.world.centerX - 70, 420, 'button', start, this, 2, 1, 0);
 
 	},
 
