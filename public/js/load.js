@@ -3,7 +3,6 @@ var loadState = {
 	preload: function() {
 
 		var loadingLabel = game.add.text(80, 150, 'LOADING...', {font: '30px Arial', fill: '#ffffff'});
-
 		//Load GameImages
     	game.load.image('futebol', '../images/football-field.jpg');
         game.load.image('stadium', '../images/stadium.jpg');
@@ -16,7 +15,10 @@ var loadState = {
     	game.load.image('arrow', '../images/arrow.png');
         game.load.image('button', '../images/bola-button.png');
 
+        game.load.image('submit', '../images/submit-button.png');
+
         game.load.audio('musica', ['../audio/som-futebol.mp3', 'assets/audio/som-futebol.ogg']);
+
 	},
 
 	create: function() {

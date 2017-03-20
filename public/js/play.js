@@ -12,7 +12,7 @@ var score = 0;
 var text = 0;
 var scoreText;
 var endText;
-var counter = 60;
+var counter = 3;
 var music;
 
 //===================GAMEPLAY FUNCTIONS========================//
@@ -26,12 +26,14 @@ function updateCounter() {
 
 function gameEnd () {
 
-    endText = game.add.text(530, 280, 'Game Over!', { fontSize: '40px', fill: '#FFF' });
+    //endText = game.add.text(530, 280, 'Game Over!', { fontSize: '40px', fill: '#FFF' });
 
     player.animations.stop(null, true);
     enemy.animations.stop(null, true);
 
     text.kill();
+
+    //music.stop();
 
     game.state.start('win');
     
@@ -120,7 +122,7 @@ create: function() {
 
     music = game.add.audio('musica');
 
-    music.play();
+    //music.play();
    
 //======================PLAYERS===========================//
 
@@ -430,7 +432,7 @@ update: function() {
 
     if (counter === 0) {
 
-        gameEnd();
+        //gameEnd();
 
         game.state.start('win');
 
@@ -438,11 +440,10 @@ update: function() {
 
 },
 
-    // Win: function() {
+    Win: function() {
             
-    //         game.state.start('win');
+        game.state.start('win');
 
-    //         //gameEnd();
-    // }
+    }
 
 }

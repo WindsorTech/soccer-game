@@ -1,7 +1,6 @@
 function start() {
 
-		game.state.start('play');
-		
+		game.state.start('play');		
 }
 
 var menuState = {
