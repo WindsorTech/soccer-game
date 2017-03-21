@@ -5,8 +5,7 @@ function playAgain() {
 
 function actionOnClick () {
 
-    //call database function
-
+	//call database stats here
 }
 
 var winState = {

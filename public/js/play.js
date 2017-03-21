@@ -24,21 +24,6 @@ function updateCounter() {
         text.setText('Time Left: ' + counter);
 }
 
-function gameEnd () {
-
-    //endText = game.add.text(530, 280, 'Game Over!', { fontSize: '40px', fill: '#FFF' });
-
-    player.animations.stop(null, true);
-    enemy.animations.stop(null, true);
-
-    text.kill();
-
-    //music.stop();
-
-    game.state.start('win');
-    
-}
-
 function set(player,pointer) {
 
         catchFlag = true;
@@ -158,16 +143,6 @@ create: function() {
     enemy3.body.collideWorldBounds = true;
     game.add.tween(enemy3).to({ y: 330 }, 3750, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
 
-    //enemy4
-    // enemy4 = game.add.sprite(980, game.world.height - 315, 'enemy');
-    // enemy4.scale.setTo(0.6, 0.6)
-    // game.physics.arcade.enable(enemy4);
-    // enemy4.body.immovable = true;
-    // enemy4.body.collideWorldBounds = true;
-    // enemy4.body.velocity.y = 70;
-    // enemy4.body.bounce.y = 1;
-    // game.add.tween(enemy4).to({ y: 320 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 3000, true);
-
     //enemy5
     enemy5 = game.add.sprite(820, game.world.height - 150, 'enemy');
     enemy5.scale.setTo(0.6, 0.6)
@@ -175,14 +150,6 @@ create: function() {
     enemy5.body.immovable = true;
     enemy5.body.collideWorldBounds = true;
     game.add.tween(enemy5).to({ y: 300 }, 3200, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
-
-    //enemy6
-    // enemy6 = game.add.sprite(770, game.world.height - 415, 'enemy');
-    // enemy6.scale.setTo(0.6, 0.6)
-    // game.physics.arcade.enable(enemy6);
-    // enemy6.body.immovable = true;
-    // enemy6.body.collideWorldBounds = true;
-    // game.add.tween(enemy6).to({ y: 330 }, 3300, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy7
     enemy7 = game.add.sprite(820, game.world.height - 575, 'enemy');
@@ -242,14 +209,6 @@ create: function() {
     enemy13.body.collideWorldBounds = true;
     game.add.tween(enemy13).to({ y: 180 }, 3000, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
-    //enemy14
-    // enemy14 = game.add.sprite(270, game.world.height - 315, 'enemy-white');
-    // enemy14.scale.setTo(0.6, 0.6)
-    // game.physics.arcade.enable(enemy14);
-    // enemy14.body.immovable = true;
-    // enemy14.body.collideWorldBounds = true;
-    // game.add.tween(enemy14).to({ y: 360 }, 3500, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
-
     //enemy15
     enemy15 = game.add.sprite(440, game.world.height - 280, 'enemy-white');
     enemy15.scale.setTo(0.6, 0.6)
@@ -257,14 +216,6 @@ create: function() {
     enemy15.body.immovable = true;
     enemy15.body.collideWorldBounds = true;
     game.add.tween(enemy15).to({ y: 500 }, 3200, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
-    
-    //enemy16
-    // enemy16 = game.add.sprite(485, game.world.height - 400, 'enemy-white');
-    // enemy16.scale.setTo(0.6, 0.6)
-    // game.physics.arcade.enable(enemy16);
-    // enemy16.body.immovable = true;
-    // enemy16.body.collideWorldBounds = true;
-    // game.add.tween(enemy16).to({ y: 350 }, 3700, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //enemy17
     enemy17 = game.add.sprite(440, game.world.height - 400, 'enemy-white');
@@ -366,14 +317,8 @@ update: function() {
     game.physics.arcade.collide(enemy3, platforms);
     game.physics.arcade.collide(enemy3, player);
 //=================================================//
-    // game.physics.arcade.collide(enemy4, platforms);
-    // game.physics.arcade.collide(enemy4, player);
-//=================================================//
     game.physics.arcade.collide(enemy5, platforms);
     game.physics.arcade.collide(enemy5, player);
-//=================================================//
-    // game.physics.arcade.collide(enemy6, platforms);
-    // game.physics.arcade.collide(enemy6, player);
 //=================================================//
     game.physics.arcade.collide(enemy7, platforms);
     game.physics.arcade.collide(enemy7, player);
@@ -396,14 +341,8 @@ update: function() {
     game.physics.arcade.collide(enemy13, platforms);
     game.physics.arcade.collide(enemy13, player);
 //=================================================//
-    // game.physics.arcade.collide(enemy14, platforms);
-    // game.physics.arcade.collide(enemy14, player);
-//=================================================//
     game.physics.arcade.collide(enemy15, platforms);
     game.physics.arcade.collide(enemy15, player);
-//=================================================//
-    // game.physics.arcade.collide(enemy16, platforms);
-    // game.physics.arcade.collide(enemy16, player);
 //=================================================//
     game.physics.arcade.collide(enemy17, platforms);
     game.physics.arcade.collide(enemy17, player);
@@ -431,8 +370,6 @@ update: function() {
     }
 
     if (counter === 0) {
-
-        //gameEnd();
 
         game.state.start('win');
 

@@ -5,6 +5,10 @@ var methodOverride = require('method-override');
 var http = require('http');
 var hb = require('handlebars');
 var exphbs = require('express-handlebars');
+var mongoose = require('mongoose');
+
+//require Leader.model.js file
+var Leader = require("./models/Leader.model.js");
 
 // routes
 var routes = require('./controllers/controller.js');
@@ -14,6 +18,24 @@ var app = express();
 
 // serve static files from the current directory
 app.use(express.static('public'));
+
+// Mongoose Promise
+mongoose.Promise = Promise;
+
+// Mongoose Database Config
+//mongoose.connect("mongodb://heroku_tv2tjk03:e8j44480oesvh566hpcdl9enmk@ds137340.mlab.com:37340/heroku_tv2tjk03");
+
+mongoose.connect("mongodb://localhost/leaderboard");
+
+var db = mongoose.connection;
+
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
 
 // port
 var PORT = process.env.PORT || 3000;
