@@ -6,6 +6,7 @@ game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('play', playState);
 game.state.add('win', winState);
+//game.state.add('leaderboard', leaderState);
 
 //Call boot function to start the game
 game.state.start('boot');

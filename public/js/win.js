@@ -1,11 +1,6 @@
-function playAgain() {
+function results() {
 
-		game.state.start('menu');
-}
-
-function actionOnClick () {
-
-	//call database stats here
+		window.location.href = "leaders";
 }
 
 var winState = {
@@ -35,7 +30,7 @@ var winState = {
 	    placeHolder: 'Player Name'
 		});
 
-		button = game.add.button(game.world.centerX - 95, 405, 'submit', actionOnClick, this, 2, 1, 0);
+		button = game.add.button(game.world.centerX - 95, 405, 'submit', results, this, 2, 1, 0);
 
 		//var wkey = game.input.keyboard.addKey(Phaser.Keyboard.W);
 
@@ -43,9 +38,9 @@ var winState = {
 
 	},
 
-	restart: function() {
+	results: function() {
 
-		game.state.start('menu');
+		window.location.href = "leaders";
 		
 	}
 };

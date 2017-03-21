@@ -23,8 +23,13 @@ router.get('/leaders', function(req, res){
 			if(err) {
 				res.send('there is something wrong here');
 			} else {
-				console.log(leaders);
-				res.json(leaders);
+				//console.log(leaders);
+				//res.json(leaders);
+				//res.render('leaderboard');
+				for (var i = 0; i < leaders.length; i++) {
+					return res.render("leaderboard", leaders[i]);
+    				//$("#gameDiv").html(leaders[i]._id  + "<br />" + leaders[i].name + "<br />" + leaders[i].score + "</p>" + "<hr>");
+				}
 			}
 		});
 });
@@ -55,10 +60,5 @@ router.post('/leaders', function (req, res) {
 // 		}
 // 	});
 // });
-
-
-router.put('/update', function (req, res) {
-
- });
 
 module.exports = router; 
