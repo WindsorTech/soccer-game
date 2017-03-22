@@ -2,6 +2,8 @@ function restart() {
 
 		score = 0;
 
+		music.stop();
+
 		game.state.start('menu');
 }
 

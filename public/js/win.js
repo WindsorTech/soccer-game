@@ -1,12 +1,6 @@
 function results() {
 
-		//window.location.href = "leaders";
-
 		game.state.start('leaderboard');
-
-		//console.log(username.value);
-
-		//console.log(score);
 
 		$.post("/leaderboard", {
 			name: username.value,
@@ -49,8 +43,6 @@ var winState = {
 	},
 
 	results: function() {
-
-		//window.location.href = "leaders";
 
 		game.state.start('leaderboard');
 		
