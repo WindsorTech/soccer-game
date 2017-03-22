@@ -23,9 +23,9 @@ app.use(express.static('public'));
 mongoose.Promise = Promise;
 
 // Mongoose Database Config
-//mongoose.connect("mongodb://heroku_tv2tjk03:e8j44480oesvh566hpcdl9enmk@ds137340.mlab.com:37340/heroku_tv2tjk03");
+mongoose.connect("mongodb://heroku_tv2tjk03:e8j44480oesvh566hpcdl9enmk@ds137340.mlab.com:37340/heroku_tv2tjk03");
 
-mongoose.connect("mongodb://localhost/leaderboard");
+//mongoose.connect("mongodb://localhost/leaderboard");
 
 var db = mongoose.connection;
 
@@ -34,7 +34,7 @@ db.on("error", function(error) {
 });
 
 db.once("open", function() {
-  console.log("Mongoose connection successful.");
+  console.log("Mongoose connection successful");
 });
 
 // port

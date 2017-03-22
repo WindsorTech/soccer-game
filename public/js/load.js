@@ -14,8 +14,8 @@ var loadState = {
     	game.load.image('analog', '../images/arrow.png');
     	game.load.image('arrow', '../images/arrow.png');
         game.load.image('button', '../images/bola-button.png');
-
         game.load.image('submit', '../images/submit-button.png');
+        game.load.image('play-again', '../images/play-again.png');
 
         game.load.audio('musica', ['../audio/som-futebol.mp3', 'assets/audio/som-futebol.ogg']);
 

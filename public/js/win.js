@@ -1,6 +1,20 @@
 function results() {
 
-		window.location.href = "leaders";
+		//window.location.href = "leaders";
+
+		game.state.start('leaderboard');
+
+		//console.log(username.value);
+
+		//console.log(score);
+
+		$.post("/leaderboard", {
+			name: username.value,
+			score: score
+		}, function(data){
+			//console.log(data);
+		})
+
 }
 
 var winState = {
@@ -22,7 +36,7 @@ var winState = {
 	    fill: '#212121',
 	    fontWeight: 'bold',
 	    width: 350,
-	    max: 20,
+	    max: 10,
 	    padding: 8,
 	    borderWidth: 1,
 	    borderColor: '#000',
@@ -32,15 +46,13 @@ var winState = {
 
 		button = game.add.button(game.world.centerX - 95, 405, 'submit', results, this, 2, 1, 0);
 
-		//var wkey = game.input.keyboard.addKey(Phaser.Keyboard.W);
-
-		//wkey.onDown.addOnce(this.start, this);
-
 	},
 
 	results: function() {
 
-		window.location.href = "leaders";
+		//window.location.href = "leaders";
+
+		game.state.start('leaderboard');
 		
 	}
 };

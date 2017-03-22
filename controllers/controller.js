@@ -17,24 +17,7 @@ router.get('/', function(req, res){
 
 });
 
-router.get('/leaders', function(req, res){
-	Leader.find({})
-		.exec(function(err, leaders) {
-			if(err) {
-				res.send('there is something wrong here');
-			} else {
-				//console.log(leaders);
-				//res.json(leaders);
-				//res.render('leaderboard');
-				for (var i = 0; i < leaders.length; i++) {
-					return res.render("leaderboard", leaders[i]);
-    				//$("#gameDiv").html(leaders[i]._id  + "<br />" + leaders[i].name + "<br />" + leaders[i].score + "</p>" + "<hr>");
-				}
-			}
-		});
-});
-
-router.post('/leaders', function (req, res) {
+router.post('/leaderboard', function (req, res) {
 	var newLeader = new Leader();
 
 	newLeader.name = req.body.name;
@@ -44,11 +27,42 @@ router.post('/leaders', function (req, res) {
 		if(err) {
 			res.send('Error saving player');
 		} else {
-			console.log(leader);
 			res.send(leader);
 		}
-	});
+	});	
 });
+
+//============================================================//
+
+router.get('/leaderboard', function(req, res) { 
+	Leader.find({})
+		.exec(function(err, leaders) {
+			if(err) {
+				res.send('there is something wrong here');
+			} else {
+				res.send(leaders);
+				//res.render("leaderboard", { leader_data : leaders });
+			}
+
+		});
+});
+
+//===========================================================//
+
+// router.get('/leaders', function(req, res){
+// 	Leader.find({})
+// 		.exec(function(err, leaders) {
+// 			if(err) {
+// 				res.send('there is something wrong here');
+// 			} else {
+// 				//console.log(leaders);
+// 				//res.json(leaders);
+// 				//res.render('leaderboard');
+// 				res.render("leaderboard", { leader_data : leaders });
+// 			}
+
+// 		});
+// });
 
 // router.post('/leaders', function (req, res) {
 // 	Leader.create(req.body, function(err, player) {

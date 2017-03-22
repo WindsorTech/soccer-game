@@ -8,11 +8,13 @@ var launchVelocity = 0;
 var platforms;
 var enemy;
 
+var username;
+var leaders;
 var score = 0;
 var text = 0;
 var scoreText;
 var endText;
-var counter = 3;
+var counter = 60;
 var music;
 
 //===================GAMEPLAY FUNCTIONS========================//
@@ -107,7 +109,7 @@ create: function() {
 
     music = game.add.audio('musica');
 
-    //music.play();
+    music.play();
    
 //======================PLAYERS===========================//
 
