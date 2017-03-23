@@ -4,6 +4,4 @@ Digiball is a fun interactive soccer game that will test your goalscoring skills
 
 Click the image below and enjoy Digitball Soccer!
 
-![alt tag](soccer-game/public/images/stadium.jpg)
-
 ![Digiball Soccer] (https://github.com/windsor80/soccer-game/public/images/stadium.jpg)
