@@ -107,6 +107,7 @@ create: function() {
     // Soccer Field Background
     game.add.sprite(0, 0, 'futebol');
 
+    //Add and play background music
     music = game.add.audio('musica');
 
     music.play();
