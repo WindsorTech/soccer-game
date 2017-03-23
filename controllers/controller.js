@@ -9,10 +9,6 @@ var Leader = require("../models/Leader.model.js");
 
 router.get('/', function(req, res){
 
-    //res.render(__dirname, '/../main');
-
-    //res.sendFile(path.join(__dirname, '/../main'));
-
     res.render('index');
 
 });
@@ -32,47 +28,16 @@ router.post('/leaderboard', function (req, res) {
 	});	
 });
 
-//============================================================//
-
 router.get('/leaderboard', function(req, res) { 
-	Leader.find({})
-		.exec(function(err, leaders) {
+	var info = Leader.find({}).sort({'score': -1}).limit(5);
+		info.exec(function(err, leaders) {
 			if(err) {
 				res.send('there is something wrong here');
 			} else {
 				res.send(leaders);
-				//res.render("leaderboard", { leader_data : leaders });
 			}
 
 		});
 });
 
-//===========================================================//
-
-// router.get('/leaders', function(req, res){
-// 	Leader.find({})
-// 		.exec(function(err, leaders) {
-// 			if(err) {
-// 				res.send('there is something wrong here');
-// 			} else {
-// 				//console.log(leaders);
-// 				//res.json(leaders);
-// 				//res.render('leaderboard');
-// 				res.render("leaderboard", { leader_data : leaders });
-// 			}
-
-// 		});
-// });
-
-// router.post('/leaders', function (req, res) {
-// 	Leader.create(req.body, function(err, player) {
-// 		if(err) {
-// 			res.send('Error saving player');
-// 		} else {
-// 			console.log(player);
-// 			res.send(player);
-// 		}
-// 	});
-// });
-
-module.exports = router; 
+module.exports = router;
