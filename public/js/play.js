@@ -101,9 +101,6 @@ var playState = {
 
 create: function() {
 
-    // Enable the Arcade Physics system to the Game
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-
     // Soccer Field Background
     game.add.sprite(0, 0, 'futebol');
 
@@ -305,7 +302,7 @@ update: function() {
     game.physics.arcade.collide(player, platforms);
     
     // Overlap function to compute goals
-    game.physics.arcade.overlap(player, goal, ownGoal, null, this);game.physics.arcade.overlap(player, goal, goalScore, null, this);
+    game.physics.arcade.overlap(player, goal, ownGoal, null, this);
     game.physics.arcade.overlap(player, goal2, goalScore, null, this);
 //=================================================//
     game.physics.arcade.collide(enemy, platforms);

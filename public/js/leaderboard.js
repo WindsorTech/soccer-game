@@ -3,6 +3,8 @@ function restart() {
 
 		score = 0;
 
+		counter = 60;
+
 		music.stop();
 
 		game.state.start('menu');
@@ -80,6 +82,10 @@ var leaderState = {
 	restart: function() {
 
 		score = 0;
+
+		counter = 60;
+
+		music.stop();
 
 		game.state.start('menu');
 		

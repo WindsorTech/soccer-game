@@ -10,7 +10,7 @@ var instructionsState = {
 		game.add.sprite(0, 0, 'futebol-clean');
 
 		//Leaderboard Page headers
-		var winLabel = game.add.text(400, 25, 'GAME INSTRUCTIONS', {font: '44px Arial', fill: '#ffffff', fontWeight: 'bold'});
+		game.add.text(400, 25, 'GAME INSTRUCTIONS', {font: '44px Arial', fill: '#ffffff', fontWeight: 'bold'});
 
 		//Instruction 1
 		game.add.text(300, 100, 'You will represent the red team, attacking to your', {font: '28px Arial', fill: '#ffffff', fontWeight: 'bold'});
