@@ -1,7 +1,7 @@
-  `{
+{
   "name": "digiball-soccer",
   "version": "1.0.0",
-  "description": "An interactive and fun soccer game for all ages!",
+  "description": "A fun digital soccer game for all ages!",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.16.1",
@@ -10,12 +10,10 @@
     "handlebars": "^4.0.6",
     "method-override": "^2.3.7",
     "mongoose": "^4.9.1",
+    "phaser-input": "^1.2.6",
     "sequelize": "^3.30.2"
   },
-  "devDependencies": {
-    "@orange-games/phaser-input": "^2.0.2",
-    "phaser-input": "^1.2.6"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -26,8 +24,9 @@
   },
   "keywords": [
     "soccer",
+    "game",
     "football",
-    "game"
+    "phaser"
   ],
   "author": "Windsor Edeling",
   "license": "ISC",

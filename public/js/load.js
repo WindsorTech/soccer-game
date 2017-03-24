@@ -5,6 +5,7 @@ var loadState = {
 		var loadingLabel = game.add.text(80, 150, 'LOADING...', {font: '30px Arial', fill: '#ffffff'});
 		//Load GameImages
     	game.load.image('futebol', '../images/football-field.jpg');
+        game.load.image('futebol-clean', '../images/football-field-clean.jpg');
         game.load.image('stadium', '../images/stadium.jpg');
     	game.load.image('enemy', '../images/footballer-yellow.png');
     	game.load.image('enemy-white', '../images/footballer-white.png');

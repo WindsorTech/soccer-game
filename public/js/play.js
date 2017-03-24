@@ -80,7 +80,7 @@ function ownGoal(player, goal) {
 function restartBall() {
 
         // Puts the ball back in the middle mark to restart the game
-        player = game.add.sprite(640, 300, 'player');
+        player = game.add.sprite(633, 300, 'player');
 
         game.physics.enable([player], Phaser.Physics.ARCADE);
 
@@ -245,16 +245,16 @@ create: function() {
     game.add.tween(enemy19).to({ y: 230 }, 3250, Phaser.Easing.Quadratic.InOut, true, 0, 1000, true);
 
     //  GAME SCORE
-    scoreText = game.add.text(597, 25, 'Goals: 0', { fontSize: '24px', fill: '#FFF' });
+    scoreText = game.add.text(580, 25, 'Goals: 0', { fontSize: '28px', fill: '#FFF' });
 
     // TIMER
     game.time.events.loop(Phaser.Timer.SECOND, updateCounter, this);
 
-    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 60', { font: "22px Arial", fill: "#ffffff", align: "center" });
-    text.anchor.setTo(0.5, -8.5);
+    text = game.add.text(game.world.centerX, game.world.centerY, 'Time Left: 60', { font: "26px Arial", fill: "#ffffff", align: "center" });
+    text.anchor.setTo(0.5, -7.0);
 
     // GOALS
-    goal = game.add.sprite(0, 252, 'goal');
+    goal = game.add.sprite(12, 252, 'goal');
 
     game.physics.enable([goal], Phaser.Physics.ARCADE);
 
@@ -262,7 +262,7 @@ create: function() {
 
     goal.body.immovable = true;
     //------------------------------------------------//
-    goal2 = game.add.sprite(1255, 252, 'goal-two');
+    goal2 = game.add.sprite(1215, 252, 'goal-two');
 
     game.physics.enable([goal2], Phaser.Physics.ARCADE);
 
@@ -282,7 +282,7 @@ create: function() {
     arrow.anchor.setTo(0.1, 0.5);
     arrow.alpha = 0;
 
-    player = game.add.sprite(640, 300, 'player');
+    player = game.add.sprite(633, 300, 'player');
 
     game.physics.enable([player], Phaser.Physics.ARCADE);
 
