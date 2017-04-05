@@ -27,7 +27,7 @@ var instructionsState = {
 		game.add.text(310, 340, 'can. However, if you concede any goals, you will', {font: '28px Arial', fill: '#ffffff', fontWeight: 'bold'});
 		game.add.text(420, 370, 'lose precious points. Good luck!', {font: '28px Arial', fill: '#ffffff', fontWeight: 'bold'});
 
-		// Play Again buttons
+		// Play Now button
 		var button = game.add.button(game.world.centerX - 70, 420, 'button', begin, this, 2, 1, 0);
 
 	},
