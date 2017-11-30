@@ -1,6 +1,6 @@
-//var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
+var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
 
-var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
+//var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
 
 // Game States
 game.state.add('boot', bootState);
