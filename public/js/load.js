@@ -3,13 +3,6 @@ var loadState = {
 	preload: function() {
 
 		var loadingLabel = game.add.text(80, 150, 'LOADING...', {font: '30px Arial', fill: '#ffffff'});
-        // Mobile resposive
-        game.scale.scaleMode = Phaser.ScaleManager.RESIZE ;
-        game.scale.pageAlignHorizontally = true;
-        game.scale.pageAlignVertically = true;
-        game.canvas.style.width = '100%';
-        game.canvas.style.height = '100%';
-        game.scale.refresh();
 
 		//Load GameImages
     	game.load.image('futebol', '../images/football-field.jpg');
