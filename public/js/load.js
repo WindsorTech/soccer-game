@@ -5,8 +5,6 @@ var loadState = {
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         game.scale.pageAlignHorizontally = true;
         game.scale.pageAlignVertically = true;
-        game.canvas.style.width = '90%';
-        game.canvas.style.height = '90%';
         game.scale.refresh();
 
 		var loadingLabel = game.add.text(80, 150, 'LOADING...', {font: '30px Arial', fill: '#ffffff'});
