@@ -1,6 +1,6 @@
 const Presets = {
-  'width': window.innerWidth < 480 ? 480 : window.innerWidth,
-  'height': window.innerHeight-32 < 320 ? 320 : window.innerHeight
+  'width': 1265,
+  'height': 599
 }
 
 var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS);
