@@ -2,9 +2,7 @@ var loadState = {
 
 	preload: function() {
 
-        game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-        
-        game.scale.refresh();
+ 
 
 		var loadingLabel = game.add.text(80, 150, 'LOADING...', {font: '30px Arial', fill: '#ffffff'});
 
