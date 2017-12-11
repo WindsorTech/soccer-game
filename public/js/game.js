@@ -3,7 +3,7 @@ const Presets = {
   'height': window.innerHeight-32 < 320 ? 320 : window.innerHeight
 }
 
-var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS, 'gameDiv');
+var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS);
 
 // var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
 
