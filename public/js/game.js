@@ -5,7 +5,7 @@ const Presets = {
 
 var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS);
 
-if (game.device.iOS == true) Presets = {'width': 1334, 'height': 750}
+if (game.device.iOS == true) Presets = {'width': 667, 'height': 375}
 
 // var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
 
