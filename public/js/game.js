@@ -1,13 +1,15 @@
-const Presets = {
-  'width': 1265,
-  'height': 599
-}
+// const Presets = {
+//   'width': 1265,
+//   'height': 599
+// }
 
-var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS);
+// var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS);
 
-if (game.device.iOS == true) Presets = {'width': 667, 'height': 375}
+// if (game.device.iOS == true) Presets = {'width': 667, 'height': 375}
 
-// var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
+var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
+
+this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;this.scale.minWidth = 320;this.scale.minHeight = 480;this.scale.maxWidth = 768;this.scale.maxHeight = 1152;
 
 // var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
 
