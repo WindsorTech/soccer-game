@@ -1,4 +1,4 @@
-// const Presets = {
+// var Presets = {
 //   'width': 1265,
 //   'height': 599
 // }
@@ -9,14 +9,6 @@
 
 var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
 
-this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-this.scale.minWidth = 320;
-this.scale.minHeight = 480;
-this.scale.maxWidth = 768;
-this.scale.maxHeight = 1152;
-game.scale.refresh();
-
-// var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
 
 // Game States
 game.state.add('boot', bootState);
