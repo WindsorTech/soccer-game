@@ -7,7 +7,7 @@
 
 // if (game.device.iOS == true) Presets = {'width': 667, 'height': 375}
 
-var game = new Phaser.Game(1250, 592, Phaser.CANVAS, 'gameDiv');
+var game = new Phaser.Game(1220, 578, Phaser.CANVAS, 'gameDiv');
 
 
 // Game States
