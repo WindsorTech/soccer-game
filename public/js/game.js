@@ -1,4 +1,11 @@
-var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
+const Presets = {
+  'width': window.innerWidth < 480 ? 480 : window.innerWidth,
+  'height': window.innerHeight-32 < 320 ? 320 : window.innerHeight
+}
+
+var game = new Phaser.Game(Presets.width, Presets.height, Phaser.CANVAS, 'gameDiv');
+
+// var game = new Phaser.Game(1265, 599, Phaser.CANVAS, 'gameDiv');
 
 // var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'gameDiv');
 
